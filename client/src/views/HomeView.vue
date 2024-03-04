@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld  msg="WUTY YESS"/>
+  <div>
+    <SideBar :isSide="isSide" @toggleSide="toggleSide" />
+    <div
+      class="main-content w-auto ml-56 bg-[#f6f7ff] ease-in duration-300"
+      :class="{ 'ml-[50px]': isSide }"
+    >
+      <h1>content</h1>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import SideBar from "@/components/sideBar.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
-  }
-}
+    SideBar,
+  },
+  data() {
+    return {
+      isSide: false,
+    };
+  },
+  methods: {
+    toggleSide() {
+      this.isSide = !this.isSide;
+    },
+  },
+};
 </script>
