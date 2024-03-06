@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div
@@ -10,8 +9,18 @@
       </header>
       <nav class="navbar w-full p-3">
         <ul class="text-[#5A5A5A] text-[19px] cursor-pointer">
-          <li class="mb-5 p-2 pl-5 hover:bg-[#f6f7ff] rounded-sm">Utama</li>
-          <li class="p-2 pl-5 hover:bg-[#f6f9ff] rounded-sm">Aduan</li>
+          <li
+            class="mb-5 p-2 pl-5 hover:bg-[#f6f7ff] rounded-sm"
+            :class="{ 'pl-0 ease-in duration-300': isSide }"
+          >
+            {{ isSide ? "🔊" : "Utama" }}
+          </li>
+          <li
+            class="p-2 pl-5 hover:bg-[#f6f9ff] rounded-sm"
+            :class="{ 'pl-0 ease-in duration-300': isSide }"
+          >
+            {{ isSide ? "📢" : "Aduan" }}
+          </li>
         </ul>
       </nav>
     </div>
@@ -30,7 +39,7 @@
       </div>
 
       <div
-        class="logout absolute right-5 top-[80px] bg-[white] p-5 rounded-md shadow-sm"
+        class="logout absolute right-5 top-[80px] bg-[white] p-5 rounded-md shadow-sm ease-in duration-300"
         :class="{ block: isboxLogout, hidden: !isboxLogout }"
       >
         <a href="#">Logout</a>
@@ -59,11 +68,12 @@ export default {
   },
 };
 </script>
+
 <style>
 .sidebar.sideActive {
-  width: 50px;
+  width: 60px;
 }
 .bar.sideActive {
-  margin-left: 50px;
+  margin-left: 60px;
 }
 </style>
