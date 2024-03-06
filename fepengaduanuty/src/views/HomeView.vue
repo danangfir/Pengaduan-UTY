@@ -2,7 +2,7 @@
   <div>
     <SideBar :isSide="isSide" @toggleSide="toggleSide" />
     <div
-      class="main-content w-auto ml-56 bg-[#f6f7ff] ease-in duration-300 p-[20px] flex gap-4"
+      class="main-content w-auto ml-56 bg-[#f6f7ff] ease-in duration-300 p-[20px] gap-4 flex flex-col-reverse md:flex-row"
       :class="{ 'ml-[50px]': isSide }"
     >
       <div
